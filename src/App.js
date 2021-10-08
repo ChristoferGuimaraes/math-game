@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
 function App() {
-  /* const [num1, setNum1] = useState(1);
-  const [num2, setNum2] = useState(2); */
+  const randomNumber1 = Math.ceil(Math.random() * 10);
+  const randomNumber2 = Math.ceil(Math.random() * 10);
+  
   const [state, setState] = useState({
-    num1: 5,
-    num2: 8,
+    num1: randomNumber1,
+    num2: randomNumber2,
     response: "",
     score: 0,
-    onScreen: ''
+    onScreen: "",
   });
 
   function inputKeyPress(event) {
@@ -16,18 +17,18 @@ function App() {
       const answer = parseInt(state.response);
       if (state.num1 + state.num2 === answer) {
         setState({
-          num1: Math.ceil(Math.random() * 10),
-          num2: Math.ceil(Math.random() * 10),
+          num1: randomNumber1,
+          num2: randomNumber2,
           score: state.score + 1,
-          response: '',
-          onScreen: "Correct!"
+          response: "",
+          onScreen: "Correct!",
         });
       } else {
         setState({
           ...state,
           score: state.score - 1,
-          response: '',
-          onScreen: "Wrong!"
+          response: "",
+          onScreen: "Wrong!",
         });
       }
     }
