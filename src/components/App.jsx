@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import "./App.css";
 
 function App() {
   const randomNumber1 = Math.ceil(Math.random() * 10);
   const randomNumber2 = Math.ceil(Math.random() * 10);
-  
+
   const [state, setState] = useState({
     num1: randomNumber1,
     num2: randomNumber2,
     response: "",
     score: 0,
-    onScreen: "",
+    onScreen: "RESPOND CORRECTLY",
   });
 
   function inputKeyPress(event) {
@@ -21,14 +22,14 @@ function App() {
           num2: randomNumber2,
           score: state.score + 1,
           response: "",
-          onScreen: "Correct!",
+          onScreen: "CORRECT!",
         });
       } else {
         setState({
           ...state,
           score: state.score - 1,
           response: "",
-          onScreen: "Wrong!",
+          onScreen: "WRONG!",
         });
       }
     }
@@ -39,12 +40,14 @@ function App() {
       ...state,
       response: event.target.value,
     });
+    console.log(event.target.value);
   }
 
   return (
-    <>
-      <div>{state.onScreen}</div>
-      <div>
+    <div className="body-component">
+      <div className="on-screen">{state.onScreen}</div>
+      <div className="line"></div>
+      <div className="num-math">
         {state.num1}+{state.num2}
       </div>
       <input
@@ -52,8 +55,8 @@ function App() {
         onChange={updateResponse}
         value={state.response}
       />
-      <div>Score: {state.score}</div>
-    </>
+      <div className="res">Score: <span>{state.score}</span></div>
+    </div>
   );
 }
 
