@@ -5,7 +5,7 @@
   background-color: #fff;
   text-align: center;
   margin: 0px auto;
-  margin-top: 250px;
+  margin-top: 80px;
   border-radius: 15px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.295);
 }
@@ -20,6 +20,10 @@
   font-size: 28px;
 }
 
+.response-input {
+  display: flex;
+}
+
 input {
   display: block;
   border-radius: 15px;
@@ -28,6 +32,7 @@ input {
   width: 100%;
   outline: none;
   font-size: 18px;
+  padding: 0px 10px;
 }
 
 .res {
@@ -42,4 +47,33 @@ input {
 
 span {
   font-weight: bold;
+}
+
+button {
+  width: 100%;
+  margin: 5px 0px;
+  border-radius: 20px;
+  border: 0px;
+  border: 1px solid rgb(155, 155, 155);
+  margin: 7px;
+  padding: 2px;
+}
+
+button:hover {
+  background-color: rgb(139, 139, 139);
+  color: white;
+}
+
+.increment-decrement-container {
+  display: flex;
+}
+
+.reset-container {
+  display: flex;
+}
+
+footer {
+  font-size: 15px;
+  margin-top: 10px;
+  color: rgb(122, 122, 122);
 }

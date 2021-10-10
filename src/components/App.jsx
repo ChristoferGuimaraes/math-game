@@ -40,7 +40,6 @@ function App() {
       ...state,
       response: event.target.value,
     });
-    console.log(event.target.value);
   }
 
   return (
@@ -50,12 +49,16 @@ function App() {
       <div className="num-math">
         {state.num1}+{state.num2}
       </div>
-      <input
-        onKeyPress={inputKeyPress}
-        onChange={updateResponse}
-        value={state.response}
-      />
-      <div className="res">Score: <span>{state.score}</span></div>
+      <div className="response-input">
+        <input
+          onKeyPress={inputKeyPress}
+          onChange={updateResponse}
+          value={state.response}
+        />
+      </div>
+      <div className="res">
+        Score: <span>{state.score}</span>
+      </div>
     </div>
   );
 }
